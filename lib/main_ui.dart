@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
-        title: "Anas",
+        title: "Aspen project",
         debugShowCheckedModeBanner: false,
         home: const FirstScreen(),
         theme: ThemeData(
