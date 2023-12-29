@@ -15,7 +15,7 @@ class TabLocationPage extends StatefulWidget {
 class _TabLocationPageState extends State<TabLocationPage> {
   final List<Popular> _popularLocation = [];
   final List<Recommended> _recommendedLocation = [];
-  bool key = false;
+
 
 
   @override
@@ -64,8 +64,8 @@ class _TabLocationPageState extends State<TabLocationPage> {
               itemBuilder: (context, int index) {
                 final popular = _popularLocation[index];
                 return InkWell(
-                  onTap: () async {
-                    key = await PersistentNavBarNavigator.pushNewScreen(
+                  onTap: ()  {
+                      PersistentNavBarNavigator.pushNewScreen(
                       context,
                       screen: SpecificScreen(
                         image: popular.image,
@@ -76,9 +76,6 @@ class _TabLocationPageState extends State<TabLocationPage> {
                       ),
                       withNavBar: false,
                     );
-                  setState(() {
-
-                  });
                   },
                   child: Stack(
                     children: [
@@ -138,7 +135,6 @@ class _TabLocationPageState extends State<TabLocationPage> {
                           ),
                         ),
                       ),
-                      if (key)
                         Positioned(
                           top: 205,
                           left: 170,
@@ -157,7 +153,7 @@ class _TabLocationPageState extends State<TabLocationPage> {
                                 ),
                               ],
                             ),
-                            child: Icon(Icons.favorite,size: 11,color: key ? Colors.red :  Colors.grey,),
+                            child: const Icon(Icons.favorite,size: 11,color: Colors.red ),
                           ),
                         ),
                     ],

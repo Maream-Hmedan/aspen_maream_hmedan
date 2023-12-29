@@ -4,7 +4,6 @@ import 'package:aspen_project/widget/shared_reference.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
 import '../../../../model/facilities_model.dart';
 
 class SpecificScreen extends StatefulWidget {
@@ -29,7 +28,7 @@ class SpecificScreen extends StatefulWidget {
 class _SpecificScreenState extends State<SpecificScreen> {
   final List<Facilities> _facilities = [];
   late Future<bool> isFavorite;
-  late bool myBool;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -66,8 +65,7 @@ class _SpecificScreenState extends State<SpecificScreen> {
                               borderRadius: BorderRadius.circular(8)),
                           child: IconButton(
                               onPressed: () {
-                                print(myBool);
-                                Navigator.of(context).pop(myBool);
+                                Navigator.of(context).pop();
                               },
                               icon: const Icon(
                                 Icons.arrow_back_ios_sharp,
@@ -104,7 +102,7 @@ class _SpecificScreenState extends State<SpecificScreen> {
                               return Text('Error: ${snapshot.error}');
                             } else {
                               // The Future<bool> has completed, and you can use the result.
-                               myBool = snapshot.data ??
+                              bool myBool = snapshot.data ??
                                   false; // Use a default value if null.
                               return FavoriteButton(
                                 iconSize: 50,

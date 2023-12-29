@@ -12,17 +12,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox(
-        height: 90.h,
+        height: 84.h,
         width: 100.w,
         child: Column(
-         mainAxisAlignment: MainAxisAlignment.start,
+         mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Stack(
               children: [
-                SizedBox(
-                  height: 18.h,
-                  width: 100.w,
-                ),
                 const Positioned(
                     top: 44,
                     left: 20,
@@ -53,7 +49,6 @@ class HomePage extends StatelessWidget {
                 )
               ],
             ),
-            const SizedBox(height: 25,),
             const CustomTab(),
 
 

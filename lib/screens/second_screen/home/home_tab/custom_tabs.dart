@@ -45,13 +45,14 @@ class _CustomTabState extends State<CustomTab> {
   @override
   Widget build(BuildContext context) {
     return Container(
+        margin: const EdgeInsets.only(left: 5),
+        padding: const EdgeInsets.only(top: 10),
 
-        margin: const EdgeInsets.all(5),
         child: Column(
           children: [
             SizedBox(
               width: double.infinity,
-              height: 80,
+              height: 60,
               child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
                   itemCount: items.length,
@@ -66,7 +67,6 @@ class _CustomTabState extends State<CustomTab> {
                             });
                           },
                           child: Container(
-                            margin: const EdgeInsets.all(5),
                             width: 89,
                             height: 41,
                             decoration: BoxDecoration(
@@ -98,7 +98,7 @@ class _CustomTabState extends State<CustomTab> {
             //  BODY
             SizedBox(
               width: double.infinity,
-              height: 420,
+              height: 450,
               child: PageView.builder(
                 itemCount: pages.length,
                 controller: pageController,
