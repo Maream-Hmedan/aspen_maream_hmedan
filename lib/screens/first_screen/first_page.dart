@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import 'custom_button.dart';
+import '../../widget/custom_button.dart';
+import '../second_screen/second_page.dart';
 
-class FirstScreen extends StatelessWidget {
-  const FirstScreen({super.key});
+class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +74,12 @@ class FirstScreen extends StatelessWidget {
               right: 48,
               child: CustButton(
                 buttonText: 'Explore',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SecondScreen()),
+                  );
+                },
               ))
         ],
       ),

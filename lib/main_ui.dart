@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'screens/first_screen.dart';
+import 'screens/first_screen/first_page.dart';
 
 
 void main() {
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
       return MaterialApp(
         title: "Aspen project",
         debugShowCheckedModeBanner: false,
-        home: const FirstScreen(),
+        home: const FirstPage(),
         theme: ThemeData(
           primaryColor: Colors.red,
         ),
