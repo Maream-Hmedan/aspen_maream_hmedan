@@ -288,7 +288,7 @@ class _TabLocationPageState extends State<TabLocationPage> {
           rate: "4N/5D"),
       Recommended(
           image: "assets/images/luxuriou.png",
-          name: "Explore Aspen",
+          name: "Luxurious Aspen",
           rate: "2N/3D"),
     ]);
   }

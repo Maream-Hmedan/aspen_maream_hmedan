@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 
-class TextFormWidget extends StatelessWidget {
-  TextFormWidget({super.key});
+class TextFormWidget extends StatefulWidget {
+  const TextFormWidget({super.key});
 
+  @override
+  State<TextFormWidget> createState() => _TextFormWidgetState();
+}
+
+class _TextFormWidgetState extends State<TextFormWidget> {
   final TextEditingController _searchController = TextEditingController();
+
   final FocusNode _searchFocusNode=FocusNode();
+
+
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 335,
+      width: 365,
       height: 52,
       child: TextFormField(
         controller: _searchController,
@@ -34,6 +42,7 @@ class TextFormWidget extends StatelessWidget {
           hintStyle: const TextStyle(color: Color(0xffB8B8B8), fontSize: 13),
         ),
       ),
+
     );
   }
 }
