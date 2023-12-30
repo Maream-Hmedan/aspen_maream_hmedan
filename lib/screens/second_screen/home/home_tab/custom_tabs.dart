@@ -9,7 +9,6 @@ class CustomTab extends StatefulWidget {
 }
 
 class _CustomTabState extends State<CustomTab> {
-  /// List of Tab Bar Item
   List<String> items = [
     "Location",
     "Hotels",
@@ -19,7 +18,6 @@ class _CustomTabState extends State<CustomTab> {
     "Profile",
   ];
 
-  /// List of body icon
   List<Widget> pages = [
     const TabLocationPage(),
     const Icon(
@@ -58,39 +56,35 @@ class _CustomTabState extends State<CustomTab> {
                   itemCount: items.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (_, index) {
-                    return Column(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              current = index;
-                            });
-                          },
-                          child: Container(
-                            width: 89,
-                            height: 41,
-                            decoration: BoxDecoration(
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          current = index;
+                        });
+                      },
+                      child: Container(
+                        width: 89,
+                        height: 41,
+                        decoration: BoxDecoration(
+                          color: current == index
+                              ? const Color(0xffF3F8FE)
+                              : null,
+                          borderRadius: current == index
+                              ? BorderRadius.circular(32)
+                              : null,
+                        ),
+                        child: Center(
+                          child: Text(
+                            items[index],
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
                               color: current == index
-                                  ? const Color(0xffF3F8FE)
-                                  : null,
-                              borderRadius: current == index
-                                  ? BorderRadius.circular(32)
-                                  : null,
-                            ),
-                            child: Center(
-                              child: Text(
-                                items[index],
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  color: current == index
-                                      ? const Color(0xff176FF2)
-                                      : const Color(0xffB8B8B8),
-                                ),
-                              ),
+                                  ? const Color(0xff176FF2)
+                                  : const Color(0xffB8B8B8),
                             ),
                           ),
                         ),
-                      ],
+                      ),
                     );
                   }),
             ),
