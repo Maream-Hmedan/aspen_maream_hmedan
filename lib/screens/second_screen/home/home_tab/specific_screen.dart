@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable, deprecated_member_use
-
 import 'package:aspen_project/widget/shared_reference.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
@@ -8,12 +6,12 @@ import '../../../../model/facilities_model.dart';
 
 class SpecificScreen extends StatefulWidget {
   final String id;
-  String image;
-  String name;
-  String description;
-  String rate;
+  final String image;
+  final String name;
+  final String description;
+  final  String rate;
 
-  SpecificScreen(
+  const SpecificScreen(
       {super.key,
       required this.id,
       required this.image,
@@ -40,10 +38,8 @@ class _SpecificScreenState extends State<SpecificScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: WillPopScope(
-        onWillPop: () {
-          return Future.value(false);
-        },
+      child: PopScope(
+        canPop: false,
         child: Scaffold(
           body: Padding(
             padding: const EdgeInsets.all(15),
