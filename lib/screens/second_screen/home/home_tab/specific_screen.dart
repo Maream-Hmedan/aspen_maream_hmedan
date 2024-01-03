@@ -51,7 +51,7 @@ class _SpecificScreenState extends State<SpecificScreen> {
               children: [
                 Stack(
                   children: [
-                    SizedBox(width: 100.w, height: 35.h),
+                    SizedBox(width: 100.w, height: 42.h),
                     Image.asset(widget.image,
                         width: 100.w, height: 40.h, fit: BoxFit.fill),
                     Positioned(
@@ -73,7 +73,7 @@ class _SpecificScreenState extends State<SpecificScreen> {
                               ))),
                     ),
                     Positioned(
-                      top: 320,
+                      top: 310,
                       left: 300,
                       child: Container(
                         width: 70,
