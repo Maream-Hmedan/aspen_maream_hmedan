@@ -42,7 +42,7 @@ class _TabLocationPageState extends State<TabLocationPage> {
                         fontWeight: FontWeight.w600,
                         color: Color(0XFF232323))),
                 SizedBox(
-                  width: 265,
+                  width: 248,
                 ),
                 Text(
                   "See all",

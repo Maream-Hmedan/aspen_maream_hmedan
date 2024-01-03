@@ -51,7 +51,7 @@ class _SpecificScreenState extends State<SpecificScreen> {
               children: [
                 Stack(
                   children: [
-                    SizedBox(width: 100.w, height: 45.h),
+                    SizedBox(width: 100.w, height: 35.h),
                     Image.asset(widget.image,
                         width: 100.w, height: 40.h, fit: BoxFit.fill),
                     Positioned(
@@ -166,7 +166,7 @@ class _SpecificScreenState extends State<SpecificScreen> {
                   widget.description,
                   style: const TextStyle(
                     fontSize: 14,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w900,
                     color: Color(0xff000000),
                   ),
                 ),
@@ -195,7 +195,7 @@ class _SpecificScreenState extends State<SpecificScreen> {
                 Column(
                   children: [
                     Container(
-                      margin: const EdgeInsets.fromLTRB(0, 25, 300, 10),
+                      margin: const EdgeInsets.fromLTRB(0, 25, 290, 10),
                       width: double.infinity,
                       child: const Text(
                         'Facilities',
