@@ -19,7 +19,7 @@ class _SearchWidgetState extends State<SearchWidget> {
   List<Recommended> _recommendedLocation = [];
   List<Popular> _popularData = [];
   List<Recommended> _recommendedData = [];
-  List _searchResult = ["aa"];
+  final List _searchResult = ["aa"];
 
   @override
   void initState() {
