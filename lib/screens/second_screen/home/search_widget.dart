@@ -19,6 +19,7 @@ class _SearchWidgetState extends State<SearchWidget> {
   List<Recommended> _recommendedLocation = [];
   List<Popular> _popularData = [];
   List<Recommended> _recommendedData = [];
+  List _searchResult = ["aa"];
 
   @override
   void initState() {
@@ -44,7 +45,6 @@ class _SearchWidgetState extends State<SearchWidget> {
     return SizedBox(
       height: 80.h,
       width: 100.w,
-
       child: Column(
         children: [
           SizedBox(
@@ -59,20 +59,24 @@ class _SearchWidgetState extends State<SearchWidget> {
                 FocusManager.instance.primaryFocus!.unfocus();
               },
               onChanged: (v) {
+                _searchResult.add("aa");
                 _recommendedLocation = List.of(_recommendedData);
                 _popularLocation = List.of(_popularData);
                 if (v.isEmpty) {
                   _popularLocation = List.of(_popularData);
                   _recommendedLocation = List.of(_recommendedData);
                 } else {
-                  _popularLocation = _popularLocation
+                  _searchResult.clear();
+                  _searchResult.addAll(_popularLocation = _popularLocation
                       .where((element) =>
                           element.name.toLowerCase().contains(v.toLowerCase()))
-                      .toList();
-                  _recommendedLocation = _recommendedLocation
-                      .where((element) =>
-                          element.name.toLowerCase().contains(v.toLowerCase()))
-                      .toList();
+                      .toList());
+                  _searchResult.addAll(_recommendedLocation =
+                      _recommendedLocation
+                          .where((element) => element.name
+                              .toLowerCase()
+                              .contains(v.toLowerCase()))
+                          .toList());
                 }
 
                 setState(() {});
@@ -144,9 +148,23 @@ class _SearchWidgetState extends State<SearchWidget> {
                   );
                 }),
           ),
-          const SizedBox(height: 8,),
+          const SizedBox(
+            height: 8,
+          ),
           Expanded(
-            child: _tab.firstWhere((element) => element.isSelected).view,
+            child: _searchResult.isNotEmpty
+                ? _tab.firstWhere((element) => element.isSelected).view
+                : const Align(
+                    alignment: Alignment.topCenter,
+                    child: Column(
+                      children: [
+                        SizedBox(height: 60),
+                        Text(
+                          "No matching results",
+                          style: TextStyle(fontSize: 30, color: Colors.grey,fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    )),
           ),
         ],
       ),
