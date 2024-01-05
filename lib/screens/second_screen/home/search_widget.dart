@@ -14,7 +14,6 @@ class SearchWidget extends StatefulWidget {
 
 class _SearchWidgetState extends State<SearchWidget> {
   final List<TabModel> _tab = [];
-
   List<Popular> _popularLocation = [];
   List<Recommended> _recommendedLocation = [];
   List<Popular> _popularData = [];
@@ -40,8 +39,6 @@ class _SearchWidgetState extends State<SearchWidget> {
 
   @override
   Widget build(BuildContext context) {
-    _tab.clear();
-    _fillTab();
     return SizedBox(
       height: 80.h,
       width: 100.w,
@@ -49,7 +46,7 @@ class _SearchWidgetState extends State<SearchWidget> {
         children: [
           SizedBox(
             width: 365,
-            height: 70,
+            height: 60,
             child: TextFormField(
               controller: _searchController,
               focusNode: _searchFocusNode,
@@ -78,7 +75,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                               .contains(v.toLowerCase()))
                           .toList());
                 }
-
+                _tab.clear();
+                _fillTab();
                 setState(() {});
               },
               decoration: InputDecoration(
