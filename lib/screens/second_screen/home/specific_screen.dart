@@ -2,7 +2,7 @@ import 'package:aspen_project/widget/shared_reference.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import '../../../../model/facilities_model.dart';
+import '../../../model/facilities_model.dart';
 
 class SpecificScreen extends StatefulWidget {
   final String id;
