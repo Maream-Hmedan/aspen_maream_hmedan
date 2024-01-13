@@ -40,6 +40,7 @@ class _SearchViewState extends State<SearchView> {
       height: 80.h,
       width: 100.w,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(
             width: 90.w,

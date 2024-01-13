@@ -30,7 +30,7 @@ class _SelectedLocationWidgetState extends State<SelectedLocationWidget> {
         Positioned(
           top: 39,
           // left: 57,
-          right: 20,
+          right: 10,
           child: Container(
             margin: const EdgeInsets.all(5),
             width: 140,
@@ -73,8 +73,8 @@ class _SelectedLocationWidgetState extends State<SelectedLocationWidget> {
         if (_isExpanded)
           Positioned(
             top: 65,
-            left: 40,
-            right: 15,
+           left: 46,
+            right:11,
             child: Container(
               width: 95,
               height: 60,
