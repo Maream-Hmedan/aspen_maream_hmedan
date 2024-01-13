@@ -4,14 +4,14 @@ import 'package:aspen_project/screens/details/place_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:sizer/sizer.dart';
-class SearchWidget extends StatefulWidget {
-  const SearchWidget({super.key});
+class SearchView extends StatefulWidget {
+  const SearchView({super.key});
 
   @override
-  State<SearchWidget> createState() => _SearchWidgetState();
+  State<SearchView> createState() => _SearchViewState();
 }
 
-class _SearchWidgetState extends State<SearchWidget> {
+class _SearchViewState extends State<SearchView> {
   final List<TabModel> _tab = [];
   List<Popular> _popularLocation = [];
   List<Recommended> _recommendedLocation = [];

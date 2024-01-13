@@ -1,5 +1,5 @@
 import 'package:aspen_project/utils/ui/custom_drop_down.dart';
-import 'package:aspen_project/utils/ui/search_widget.dart';
+import 'package:aspen_project/screens/explore/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -42,7 +42,7 @@ class ExploreScreen extends StatelessWidget {
                   const SelectedLocationWidget(),
                 ],
               ),
-              const SearchWidget(),
+              const SearchView(),
             ],
           ),
         ),
