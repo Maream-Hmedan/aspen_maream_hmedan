@@ -1,10 +1,9 @@
+import 'package:aspen_project/model/popular_model.dart';
+import 'package:aspen_project/model/recommended_model.dart';
 import 'package:aspen_project/screens/details/place_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:sizer/sizer.dart';
-import '../../model/popular_model.dart';
-import '../../model/recommended_model.dart';
-
 class SearchWidget extends StatefulWidget {
   const SearchWidget({super.key});
 
