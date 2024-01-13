@@ -25,7 +25,7 @@ class _SelectedLocationWidgetState extends State<SelectedLocationWidget> {
       children: [
         SizedBox(
             width: 50.w,
-            height: 17.h,
+            height: 15.h,
         ),
         Positioned(
           top: 39,
