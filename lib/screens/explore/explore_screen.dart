@@ -15,7 +15,7 @@ class ExploreScreen extends StatelessWidget {
         child: SizedBox(
           width: 100.w,
           child:  Column(
-            mainAxisSize: MainAxisSize.min,
+
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
