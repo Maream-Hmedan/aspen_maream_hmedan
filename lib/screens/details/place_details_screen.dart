@@ -1,38 +1,30 @@
-import 'package:aspen_project/widget/shared_reference.dart';
+import 'package:aspen_project/model/facilities_model.dart';
+import 'package:aspen_project/model/popular_model.dart';
+import 'package:aspen_project/utils/ui/shared_reference.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import '../../../model/facilities_model.dart';
 
-class SpecificScreen extends StatefulWidget {
-  final String id;
-  final String image;
-  final String name;
-  final String description;
-  final  String rate;
+import '../../utils/ui/custom_button.dart';
 
-  const SpecificScreen(
-      {super.key,
-      required this.id,
-      required this.image,
-      required this.description,
-      required this.name,
-      required this.rate});
+class PlaceDetailsScreen extends StatefulWidget {
+  final Popular model;
+
+  const PlaceDetailsScreen({super.key, required this.model});
 
   @override
-  State<SpecificScreen> createState() => _SpecificScreenState();
+  State<PlaceDetailsScreen> createState() => _PlaceDetailsScreenState();
 }
 
-class _SpecificScreenState extends State<SpecificScreen> {
+class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
   final List<Facilities> _facilities = [];
-  late Future<bool> isFavorite;
+  late Future<bool> _isFavorite;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    fillFacilities();
-    isFavorite = Shared.getPrefBool(widget.id);
+    _fillFacilities();
+    _isFavorite = Shared.getPrefBool(widget.model.id);
   }
 
   @override
@@ -48,7 +40,7 @@ class _SpecificScreenState extends State<SpecificScreen> {
                 Stack(
                   children: [
                     SizedBox(width: 100.w, height: 42.h),
-                    Image.asset(widget.image,
+                    Image.asset(widget.model.image,
                         width: 100.w, height: 40.h, fit: BoxFit.fill),
                     Positioned(
                       top: 20,
@@ -69,8 +61,8 @@ class _SpecificScreenState extends State<SpecificScreen> {
                               ))),
                     ),
                     Positioned(
-                      top: 310,
-                      left: 300,
+                      bottom: 0,
+                      right: 20,
                       child: Container(
                         width: 70,
                         height: 50,
@@ -87,7 +79,7 @@ class _SpecificScreenState extends State<SpecificScreen> {
                           ],
                         ),
                         child: FutureBuilder<bool>(
-                          future: isFavorite,
+                          future: _isFavorite,
                           builder: (context, snapshot) {
                             if (snapshot.connectionState ==
                                 ConnectionState.waiting) {
@@ -105,7 +97,7 @@ class _SpecificScreenState extends State<SpecificScreen> {
                                 isFavorite: myBool,
                                 valueChanged: (isFavorite) {
                                   myBool = isFavorite;
-                                  Shared.savePrefBoll(widget.id, myBool);
+                                  Shared.savePrefBoll(widget.model.id, myBool);
                                 },
                               );
                             }
@@ -116,27 +108,27 @@ class _SpecificScreenState extends State<SpecificScreen> {
                   ],
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      widget.name,
-                      style: const TextStyle(
-                          fontSize: 24, fontWeight: FontWeight.w600),
+                      widget.model.name,
+                      style:  TextStyle(
+                          fontSize: 17.sp, fontWeight: FontWeight.w600),
                     ),
-                    const Column(
+                     Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
                           "Show map",
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 10.sp,
                               fontWeight: FontWeight.w700,
-                              color: Color(0xff196EEE)),
+                              color: const Color(0xff196EEE)),
                         )
                       ],
                     ),
@@ -148,10 +140,10 @@ class _SpecificScreenState extends State<SpecificScreen> {
                 Row(
                   children: [
                     const Icon(Icons.star, color: Color(0XFFDF9652), size: 12),
-                    Text(" ${widget.rate} (355 Reviews)",
-                        style: const TextStyle(
-                            fontSize: 12,
-                            color: Color(0xff606060),
+                    Text(" ${widget.model.rate} (355 Reviews)",
+                        style:  TextStyle(
+                            fontSize: 8.sp,
+                            color: const Color(0xff606060),
                             fontWeight: FontWeight.w400)),
                   ],
                 ),
@@ -159,28 +151,28 @@ class _SpecificScreenState extends State<SpecificScreen> {
                   height: 10,
                 ),
                 Text(
-                  widget.description,
-                  style: const TextStyle(
-                    fontSize: 14,
+                  widget.model.description,
+                  style:  TextStyle(
+                    fontSize: 11.sp,
                     fontWeight: FontWeight.w900,
-                    color: Color(0xff000000),
+                    color: Colors.black,
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.fromLTRB(0, 15, 233, 0),
+                  margin: const EdgeInsets.fromLTRB(5, 10, 0, 0),
                   width: double.infinity,
-                  child: const Row(
+                  child:  Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         'Read more',
                         style: TextStyle(
-                          color: Color(0xff176FF2),
-                          fontSize: 14,
+                          color: const Color(0xff176FF2),
+                          fontSize: 11.sp,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.keyboard_arrow_down,
                         size: 24,
                         color: Color(0xff176FF2),
@@ -191,20 +183,20 @@ class _SpecificScreenState extends State<SpecificScreen> {
                 Column(
                   children: [
                     Container(
-                      margin: const EdgeInsets.fromLTRB(0, 25, 290, 10),
+                      margin: const EdgeInsets.fromLTRB(5, 15, 0, 10),
                       width: double.infinity,
-                      child: const Text(
+                      child:  Text(
                         'Facilities',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
-                          height: 1.2175,
-                          color: Color(0xff232323),
+                          height: 1.21,
+                          color: Colors.black,
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 74,
+                      height: 90,
                       width: double.infinity,
                       child: ListView.builder(
                         shrinkWrap: true,
@@ -266,66 +258,54 @@ class _SpecificScreenState extends State<SpecificScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        // price1ek (0:69)
                         margin: const EdgeInsets.only(bottom: 5),
-                        child: const Text(
+                        child:  Text(
                           'Price',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 10.sp,
                             fontWeight: FontWeight.w500,
-                            height: 1.2575,
-                            color: Color(0xff232323),
+                            height: 1.25,
+                            color: Colors.black,
                           ),
                         ),
                       ),
-                      const Text(
+                       Text(
                         '\$199',
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 17.sp,
                           fontWeight: FontWeight.w700,
-                          height: 1.2175,
-                          color: Color(0xff2cd6a3),
+                          height: 1.21,
+                          color: const Color(0xff2cd6a3),
                         ),
                       ),
                     ],
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.fromLTRB(0, 2, 0, 30),
-                  height: 56,
-                  width: 250,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    gradient: const LinearGradient(
-                      colors: <Color>[Color(0xff176ef2), Color(0xff186eee)],
-                      stops: <double>[0, 1],
-                    ),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Color(0x3d0038ff),
-                        offset: Offset(0, 6),
-                        blurRadius: 9.5,
+                  margin: const EdgeInsets.only(bottom: 30),
+                  child: CustButton(
+                    width: 30.h,
+                    buttonChild: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Book Now',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2575,
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(width: 5,),
+                          Icon(
+                            Icons.arrow_forward_rounded,
+                            color: Colors.white,
+                            size: 24,
+                          )
+                        ],
                       ),
-                    ],
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Book Now   ',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          height: 1.2575,
-                          color: Color(0xffffffff),
-                        ),
-                      ),
-                      Icon(
-                        Icons.arrow_forward_rounded,
-                        color: Color(0xffffffff),
-                        size: 24,
-                      )
-                    ],
+                  onTap: (){},
                   ),
                 ),
               ],
@@ -336,12 +316,12 @@ class _SpecificScreenState extends State<SpecificScreen> {
     );
   }
 
-  void fillFacilities() {
+  void _fillFacilities() {
     _facilities.addAll([
-      Facilities(image: "assets/images/Vectorvector.png", label: "1 Heater"),
-      Facilities(image: "assets/images/foodfood.png", label: "Dinner"),
-      Facilities(image: "assets/images/bath tubbath.png", label: "1 Tub"),
-      Facilities(image: "assets/images/Frameframe.png", label: "Pool"),
+      Facilities(image: "assets/images/vector.png", label: "1 Heater"),
+      Facilities(image: "assets/images/food.png", label: "Dinner"),
+      Facilities(image: "assets/images/bath.png", label: "1 Tub"),
+      Facilities(image: "assets/images/frame.png", label: "Pool"),
     ]);
   }
 }

@@ -1,11 +1,16 @@
-
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class CustButton extends StatelessWidget {
-  final String buttonText;
+  final Widget buttonChild;
   final GestureTapCallback onTap;
+  final width;
 
-  const CustButton({super.key, required this.buttonText, required this.onTap});
+  const CustButton(
+      {super.key,
+      required this.buttonChild,
+      required this.onTap,
+       this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +19,7 @@ class CustButton extends StatelessWidget {
       child: Center(
         child: Container(
           alignment: Alignment.center,
-          width: 400,
+          width: width??90.w,
           height: 52,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
@@ -30,13 +35,7 @@ class CustButton extends StatelessWidget {
               ),
             ],
           ),
-          child: Text(
-            buttonText,
-            style: const TextStyle(
-              fontSize: 25,
-              color: Colors.white,
-            ),
-          ),
+          child: buttonChild,
         ),
       ),
     );

@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-import 'home/home_page.dart';
+import '../explore/explore_screen.dart';
 
-class SecondScreen extends StatefulWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+class BottomNavBarScreen extends StatefulWidget {
+  const BottomNavBarScreen({Key? key}) : super(key: key);
 
   @override
-  State<SecondScreen> createState() => _SecondScreenState();
+  State<BottomNavBarScreen> createState() => _BottomNavBarScreenState();
 }
 
-class _SecondScreenState extends State<SecondScreen> {
+class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   int index = 0;
 
-  final List<BottomModel> _bottom = [
-    BottomModel(
+  final List<BottomTabModel> _bottomTabs = [
+    BottomTabModel(
         icon: const Icon(Icons.indeterminate_check_box),
-        view: const HomePage()),
-    BottomModel(
+        view: const ExploreScreen()),
+    BottomTabModel(
         icon: const Icon(Icons.confirmation_number_outlined),
         view: Container()),
-    BottomModel(
+    BottomTabModel(
         icon: const Icon(Icons.favorite_outline_rounded), view: Container()),
-    BottomModel(icon: const Icon(Icons.person_outline), view: Container()),
+    BottomTabModel(icon: const Icon(Icons.person_outline), view: Container()),
   ];
 
   @override
@@ -37,7 +37,7 @@ class _SecondScreenState extends State<SecondScreen> {
   Widget _persistentTabBar() {
     return PersistentTabView(
       context,
-      screens: _bottom.map((e) => e.view).toList(),
+      screens: _bottomTabs.map((e) => e.view).toList(),
       navBarHeight: 90,
       decoration:  const NavBarDecoration (
         borderRadius:  BorderRadius.only(topLeft: Radius.circular(32),topRight: Radius.circular(32)),
@@ -89,9 +89,9 @@ class _SecondScreenState extends State<SecondScreen> {
   }
 }
 
-class BottomModel {
-  Icon icon;
+class BottomTabModel {
+  Widget icon;
   Widget view;
 
-  BottomModel({required this.icon, required this.view});
+  BottomTabModel({required this.icon, required this.view});
 }

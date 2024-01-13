@@ -1,11 +1,12 @@
+import 'package:aspen_project/utils/ui/custom_drop_down.dart';
+import 'package:aspen_project/utils/ui/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import 'search_widget.dart';
-import 'custom_drop_down.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+
+class ExploreScreen extends StatelessWidget {
+  const ExploreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: SizedBox(
           width: 100.w,
-          child: const Column(
+          child:  Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,24 +25,24 @@ class HomePage extends StatelessWidget {
                       Text(
                         "Explore",
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 10.sp,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
                       Text(
                         '  Aspen',
                         style: TextStyle(
-                          fontSize: 32,
+                          fontSize: 24.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
                       ),
                     ],
                   ),
-                  SelectedLocationWidget(),
+                  const SelectedLocationWidget(),
                 ],
               ),
-              SearchWidget(),
+              const SearchWidget(),
             ],
           ),
         ),

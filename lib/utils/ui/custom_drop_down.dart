@@ -9,12 +9,12 @@ class SelectedLocationWidget extends StatefulWidget {
 }
 
 class _SelectedLocationWidgetState extends State<SelectedLocationWidget> {
-  bool isExpanded = false;
+  bool _isExpanded = false;
 
-  String selectedValue = 'Aspen,USA';
+  String _selectedValue = 'Aspen,USA';
 
   //list that will be expanded
-  List<String> locationList = [
+  static const List<String> _locationList = [
     'Aspen,USA',
     'Jordan,Amman',
   ];
@@ -38,7 +38,7 @@ class _SelectedLocationWidgetState extends State<SelectedLocationWidget> {
             child: InkWell(
               onTap: () {
                 FocusScope.of(context).unfocus();
-                isExpanded = !isExpanded;
+                _isExpanded = !_isExpanded;
                 setState(() {});
               },
               child: Row(
@@ -49,19 +49,19 @@ class _SelectedLocationWidgetState extends State<SelectedLocationWidget> {
                     size: 16,
                   ),
                   Text(
-                    selectedValue,
+                    _selectedValue,
                     style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
-                      height: 1.2575,
+                      height: 1.25,
                       color: Color(0xff5f5f5f),
                     ),
                   ),
                   Icon(
-                      isExpanded
+                      _isExpanded
                           ? Icons.keyboard_arrow_up
                           : Icons.keyboard_arrow_down,
-                      color: isExpanded
+                      color: _isExpanded
                           ? Colors.grey
                           : const Color(0xff0858D0),
                       size: 16)
@@ -70,7 +70,7 @@ class _SelectedLocationWidgetState extends State<SelectedLocationWidget> {
             ),
           ),
         ),
-        if (isExpanded)
+        if (_isExpanded)
           Positioned(
             top: 65,
             left: 40,
@@ -87,19 +87,19 @@ class _SelectedLocationWidgetState extends State<SelectedLocationWidget> {
                 shrinkWrap: true,
                 padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
                 physics: const BouncingScrollPhysics(),
-                children: locationList
+                children: _locationList
                     .map(
                       (e) => InkWell(
                         onTap: () {
-                          isExpanded = false;
-                          selectedValue = e;
+                          _isExpanded = false;
+                          _selectedValue = e;
                           setState(() {});
                         },
                         child: Container(
                           height: 25,
                           width: 100,
                           decoration: BoxDecoration(
-                            color: selectedValue == e
+                            color: _selectedValue == e
                                 ? Colors.white
                                 : Colors.grey.shade200,
                           ),
@@ -110,16 +110,14 @@ class _SelectedLocationWidgetState extends State<SelectedLocationWidget> {
                               ),
                               Text(
                                 e.toString(),
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 14,
-                                    color: selectedValue == e
-                                        ? Colors.black
-                                        : Colors.black),
+                                    color:Colors.black),
                               ),
                               const SizedBox(
                                 width: 5,
                               ),
-                              if (selectedValue == e)
+                              if (_selectedValue == e)
                                 const Icon(Icons.check,
                                   color: Color(0xff0858D0),
                                   size: 16,),

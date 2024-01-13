@@ -1,5 +1,5 @@
 class Popular {
-  String iD;
+  String id;
   String image;
   String name;
   String rate;
@@ -8,7 +8,7 @@ class Popular {
   Popular(
       {required this.image,
       required this.name,
-      required this.iD,
+      required this.id,
       required this.rate,
       required this.description});
 }
