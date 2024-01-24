@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "620018861148",
+    "project_id": "aspen-62a15",
+    "storage_bucket": "aspen-62a15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620018861148:android:2b305956a3b88165a6d299",
+        "android_client_info": {
+          "package_name": "com.example.aspen_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCahXmoup2nlUAeJkd24wrqOwt3dH0F1zs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

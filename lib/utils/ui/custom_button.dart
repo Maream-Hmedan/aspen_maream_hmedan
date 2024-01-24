@@ -4,7 +4,7 @@ import 'package:sizer/sizer.dart';
 class CustButton extends StatelessWidget {
   final Widget buttonChild;
   final GestureTapCallback onTap;
-  final width;
+  final double ? width;
 
   const CustButton(
       {super.key,
