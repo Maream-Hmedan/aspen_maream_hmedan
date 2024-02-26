@@ -116,7 +116,8 @@ class _SearchViewState extends State<SearchView> {
                             child: Center(
                               child: Text(
                                 _tab[index].name,
-                                style: const TextStyle(
+                                style:  TextStyle(
+                                  fontSize:10.sp,
                                     fontWeight: FontWeight.w500,
                                     color: Color(0xff176FF2)),
                               ),
@@ -241,17 +242,16 @@ class _SearchViewState extends State<SearchView> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 20, bottom: 10),
+          padding: const EdgeInsets.only(left: 20, bottom: 10,right: 10),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Popular",
                   style: TextStyle(
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w600,
                       color: const Color(0XFF232323))),
-              SizedBox(
-                width: 60.w,
-              ),
+
               Text(
                 "See all",
                 style: TextStyle(
@@ -299,7 +299,7 @@ class _SearchViewState extends State<SearchView> {
                       left: 30,
                       child: Container(
                         padding: const EdgeInsets.all(8),
-                        height: 33,
+                        height: 4.h,
                         decoration: const BoxDecoration(
                           color: Color(0XFF4D5652),
                           borderRadius: BorderRadius.all(Radius.circular(59)),
@@ -318,7 +318,7 @@ class _SearchViewState extends State<SearchView> {
                       left: 30,
                       child: Container(
                         width: 52,
-                        height: 24,
+                        height: 3.h,
                         decoration: const BoxDecoration(
                           color: Color(0XFF4D5652),
                           borderRadius: BorderRadius.all(Radius.circular(59)),
@@ -385,7 +385,7 @@ class _SearchViewState extends State<SearchView> {
             itemBuilder: (context, int index) {
               final recommend = _recommendedLocation[index];
               return Container(
-                height: 95,
+                height: 21.h,
                 width: 44.w,
                 margin: const EdgeInsets.only(
                     left: 20, right: 20, bottom: 5, top: 5),

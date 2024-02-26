@@ -185,7 +185,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                 Column(
                   children: [
                     Container(
-                      margin: const EdgeInsets.fromLTRB(5, 15, 0, 10),
+                      margin: const EdgeInsets.fromLTRB(5, 10, 0, 10),
                       width: double.infinity,
                       child:  Text(
                         'Facilities',
@@ -198,7 +198,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 90,
+                      height: 9.h,
                       width: double.infinity,
                       child: ListView.builder(
                         shrinkWrap: true,
@@ -246,7 +246,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
           ),
           bottomNavigationBar: Container(
             width: double.infinity,
-            height: 84,
+            height: 12.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
             ),

@@ -40,7 +40,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
     return PersistentTabView(
       context,
       screens: _bottomTabs.map((e) => e.view).toList(),
-      navBarHeight: 90,
+      navBarHeight: 80,
       decoration: const NavBarDecoration(
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(32), topRight: Radius.circular(32)),

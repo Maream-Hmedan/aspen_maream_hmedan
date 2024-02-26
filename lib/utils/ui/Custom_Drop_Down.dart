@@ -35,11 +35,11 @@ class _CustomDropDownState extends State<CustomDropDown> {
       showLabelInMenu: false,
       dropdownItemStyle: const TextStyle(fontSize: 14, color: Colors.black),
       dropdownBackgroundColor: Colors.grey.shade200,
-      labelStyle: const TextStyle(
-        fontSize: 12,
+      labelStyle:  TextStyle(
+        fontSize: 10.sp,
         fontWeight: FontWeight.w400,
         height: 1.25,
-        color: Color(0xff5f5f5f),
+        color: const Color(0xff5f5f5f),
       ),
       menuMode: true,
       menuHeight: 10.h,
