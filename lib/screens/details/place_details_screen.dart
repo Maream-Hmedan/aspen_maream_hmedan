@@ -110,7 +110,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 3,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,7 +123,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                      Column(
                       children: [
                         const SizedBox(
-                          height: 5,
+                          height: 3,
                         ),
                         Text(
                           "Show map",
@@ -137,7 +137,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                   ],
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 3,
                 ),
                 Row(
                   children: [
@@ -150,7 +150,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Text(
                   widget.model.description,
@@ -185,7 +185,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                 Column(
                   children: [
                     Container(
-                      margin: const EdgeInsets.fromLTRB(5, 10, 0, 10),
+                      margin: const EdgeInsets.fromLTRB(5, 5, 0, 10),
                       width: double.infinity,
                       child:  Text(
                         'Facilities',

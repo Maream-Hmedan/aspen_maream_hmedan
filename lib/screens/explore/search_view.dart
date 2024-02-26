@@ -39,7 +39,7 @@ class _SearchViewState extends State<SearchView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80.h,
+      height: 85.h,
       width: 100.w,
       child: Column(
         children: [
@@ -116,10 +116,10 @@ class _SearchViewState extends State<SearchView> {
                             child: Center(
                               child: Text(
                                 _tab[index].name,
-                                style:  TextStyle(
-                                  fontSize:10.sp,
+                                style: TextStyle(
+                                    fontSize: 10.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: Color(0xff176FF2)),
+                                    color: const Color(0xff176FF2)),
                               ),
                             ),
                           )
@@ -133,9 +133,10 @@ class _SearchViewState extends State<SearchView> {
                             child: Center(
                               child: Text(
                                 _tab[index].name,
-                                style: const TextStyle(
+                                style: TextStyle(
+                                  fontSize: 10.sp,
                                   fontWeight: FontWeight.w500,
-                                  color: Color(0xffB8B8B8),
+                                  color: const Color(0xffB8B8B8),
                                 ),
                               ),
                             ),
@@ -149,15 +150,15 @@ class _SearchViewState extends State<SearchView> {
           Expanded(
             child: _searchResult.isNotEmpty
                 ? _tab.firstWhere((element) => element.isSelected).view
-                : const Align(
+                : Align(
                     alignment: Alignment.topCenter,
                     child: Column(
                       children: [
-                        SizedBox(height: 60),
+                        const SizedBox(height: 60),
                         Text(
                           "No matching results",
                           style: TextStyle(
-                              fontSize: 30,
+                              fontSize: 1.sp,
                               color: Colors.grey,
                               fontWeight: FontWeight.bold),
                         ),
@@ -242,7 +243,7 @@ class _SearchViewState extends State<SearchView> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 20, bottom: 10,right: 10),
+          padding: const EdgeInsets.only(left: 20, bottom: 10, right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -251,7 +252,6 @@ class _SearchViewState extends State<SearchView> {
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w600,
                       color: const Color(0XFF232323))),
-
               Text(
                 "See all",
                 style: TextStyle(
@@ -304,13 +304,14 @@ class _SearchViewState extends State<SearchView> {
                           color: Color(0XFF4D5652),
                           borderRadius: BorderRadius.all(Radius.circular(59)),
                         ),
-                        child: Text(popular.name,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                            )),
+                        child: Center(
+                          child: Text(popular.name,
+                              style: TextStyle(
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white,
+                              )),
+                        ),
                       ),
                     ),
                     Positioned(
@@ -376,7 +377,7 @@ class _SearchViewState extends State<SearchView> {
                   color: const Color(0XFF232323))),
         ),
         SizedBox(
-          height: 22.h,
+          height: 23.h,
           child: ListView.builder(
             shrinkWrap: true,
             physics: const BouncingScrollPhysics(),
@@ -385,7 +386,6 @@ class _SearchViewState extends State<SearchView> {
             itemBuilder: (context, int index) {
               final recommend = _recommendedLocation[index];
               return Container(
-                height: 21.h,
                 width: 44.w,
                 margin: const EdgeInsets.only(
                     left: 20, right: 20, bottom: 5, top: 5),
@@ -430,7 +430,7 @@ class _SearchViewState extends State<SearchView> {
                       top: 14.h,
                       right: 13,
                       child: Container(
-                        width: 45,
+                        width: 15.w,
                         height: 20,
                         decoration: BoxDecoration(
                           color: const Color(0XFF4D5652),
@@ -442,10 +442,10 @@ class _SearchViewState extends State<SearchView> {
                         child: Center(
                           child: Text(
                             recommend.rate,
-                            style: const TextStyle(
-                                fontSize: 12,
+                            style: TextStyle(
+                                fontSize: 10.sp,
                                 fontWeight: FontWeight.w500,
-                                color: Color(0XFFFFFFFF)),
+                                color: const Color(0XFFFFFFFF)),
                           ),
                         ),
                       ),

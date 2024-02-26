@@ -167,7 +167,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
             children: [
               Container(
                 decoration: widget.decoration,
-                width: 40.w,
+                width: 50.w,
                 child: TextButton(
                   style: TextButton.styleFrom(
                       backgroundColor: widget.backgroundColor,
@@ -580,7 +580,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
   mainList(setState) {
     return Scrollbar(
       child: Container(
-        width: 50.w,
+        width: 55.w,
         decoration: BoxDecoration(
           color: widget.dropdownBackgroundColor,
           borderRadius: BorderRadius.circular(7),
@@ -651,8 +651,8 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
 
                               Text(
                                 newDataList[index].split('-_-')[0].toString(),
-                                style: const TextStyle(
-                                    fontSize: 14,
+                                style:  TextStyle(
+                                    fontSize: 10.sp,
                                     color:Colors.black),
                               ),
 
