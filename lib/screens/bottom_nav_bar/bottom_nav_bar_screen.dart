@@ -59,25 +59,25 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
       navBarStyle: NavBarStyle.style6,
       items: [
         PersistentBottomNavBarItem(
-          icon: Image.asset(homeBottomNavBar,
+          icon: Image.asset(homeBottomNavBar,scale: 0.7,
               color: index == 0
                   ? null
                   : const Color(0xffB8B8B8)),
         ),
         PersistentBottomNavBarItem(
-          icon: Image.asset(ticketBottomNavBar,
+          icon: Image.asset(ticketBottomNavBar,scale: 0.7,
               color: index == 1
                   ? const Color(0xff186FF2)
                   : const Color(0xffB8B8B8)),
         ),
         PersistentBottomNavBarItem(
-          icon: Image.asset(heartBottomNavBar,
+          icon: Image.asset(heartBottomNavBar,scale: 0.7,
               color: index == 2
                   ? const Color(0xff186FF2)
                   : const Color(0xffB8B8B8)),
         ),
         PersistentBottomNavBarItem(
-          icon: Image.asset(profileBottomNavBar,
+          icon: Image.asset(profileBottomNavBar,scale: 0.7,
               color: index == 3
                   ? const Color(0xff186FF2)
                   : const Color(0xffB8B8B8)),
