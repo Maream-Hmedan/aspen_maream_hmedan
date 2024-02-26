@@ -1,3 +1,4 @@
+import 'package:aspen_project/configuration/app_images.dart';
 import 'package:aspen_project/screens/bottom_nav_bar/bottom_nav_bar_screen.dart';
 import 'package:aspen_project/utils/ui/custom_button.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Image.asset(
-            "assets/images/splash_bg.png",
+            homeBackGround,
             fit: BoxFit.fitWidth,
             width: 100.w,
             height: 100.h,
@@ -24,7 +25,7 @@ class HomeScreen extends StatelessWidget {
             left: 57,
             right: 57,
             child: Image.asset(
-              "assets/images/aspen_logo_text_img.png",
+              aspenLogo,
               fit: BoxFit.fill,
               width: 50.w,
               // height: 100.h,

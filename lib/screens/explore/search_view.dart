@@ -1,9 +1,11 @@
+import 'package:aspen_project/configuration/app_images.dart';
 import 'package:aspen_project/model/popular_model.dart';
 import 'package:aspen_project/model/recommended_model.dart';
 import 'package:aspen_project/screens/details/place_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:sizer/sizer.dart';
+
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
 
@@ -171,7 +173,7 @@ class _SearchViewState extends State<SearchView> {
     _popularLocation.addAll(
       [
         Popular(
-          image: "assets/images/alley.png",
+          image: alleyPalacePopular,
           name: "Alley Palace",
           rate: "4.1",
           description: 'Aspen is as close as one can get to'
@@ -180,7 +182,7 @@ class _SearchViewState extends State<SearchView> {
           id: 'Alley_Palace',
         ),
         Popular(
-          image: "assets/images/coourdes_alpea.png",
+          image: coeurdesAlpesPopular,
           name: "Coeurdes Alpes",
           rate: "4.5",
           description: 'Coeurdes Alpes is as close as one '
@@ -195,13 +197,9 @@ class _SearchViewState extends State<SearchView> {
   void _fillRecommendedLocation() {
     _recommendedLocation.addAll([
       Recommended(
-          image: "assets/images/explore_aspen.png",
-          name: "Alley Palace",
-          rate: "4N/5D"),
+          image: alleyPalaceRecommend, name: "Alley Palace", rate: "4N/5D"),
       Recommended(
-          image: "assets/images/luxuriou.png",
-          name: "Coeurdes Alpes",
-          rate: "2N/3D"),
+          image: coeurdesAlpesRecommend, name: "Coeurdes Alpes", rate: "2N/3D"),
     ]);
   }
 

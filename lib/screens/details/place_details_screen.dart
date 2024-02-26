@@ -1,3 +1,4 @@
+import 'package:aspen_project/configuration/app_images.dart';
 import 'package:aspen_project/model/facilities_model.dart';
 import 'package:aspen_project/model/popular_model.dart';
 import 'package:aspen_project/utils/ui/custom_button.dart';
@@ -319,10 +320,10 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
 
   void _fillFacilities() {
     _facilities.addAll([
-      Facilities(image: "assets/images/vector.png", label: "1 Heater"),
-      Facilities(image: "assets/images/food.png", label: "Dinner"),
-      Facilities(image: "assets/images/bath.png", label: "1 Tub"),
-      Facilities(image: "assets/images/frame.png", label: "Pool"),
+      Facilities(image: heaterFacilities, label: "1 Heater"),
+      Facilities(image: dinnerFacilities, label: "Dinner"),
+      Facilities(image: tubFacilities, label: "1 Tub"),
+      Facilities(image: poolFacilities, label: "Pool"),
     ]);
   }
 }

@@ -1,3 +1,4 @@
+import 'package:aspen_project/configuration/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -58,21 +59,29 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
       navBarStyle: NavBarStyle.style6,
       items: [
         PersistentBottomNavBarItem(
-            icon: const Icon(Icons.indeterminate_check_box),
-            activeColorPrimary:
-                index == 0 ? const Color(0xff186FF2) : const Color(0xffB8B8B8)),
+          icon: Image.asset(homeBottomNavBar,
+              color: index == 0
+                  ? null
+                  : const Color(0xffB8B8B8)),
+        ),
         PersistentBottomNavBarItem(
-            icon: const Icon(Icons.confirmation_number_outlined),
-            activeColorPrimary:
-                index == 1 ? const Color(0xff186FF2) : const Color(0xffB8B8B8)),
+          icon: Image.asset(ticketBottomNavBar,
+              color: index == 1
+                  ? const Color(0xff186FF2)
+                  : const Color(0xffB8B8B8)),
+        ),
         PersistentBottomNavBarItem(
-            icon: const Icon(Icons.favorite_outline_rounded),
-            activeColorPrimary:
-                index == 2 ? const Color(0xff186FF2) : const Color(0xffB8B8B8)),
+          icon: Image.asset(heartBottomNavBar,
+              color: index == 2
+                  ? const Color(0xff186FF2)
+                  : const Color(0xffB8B8B8)),
+        ),
         PersistentBottomNavBarItem(
-            icon: const Icon(Icons.person_outline),
-            activeColorPrimary:
-                index == 3 ? const Color(0xff186FF2) : const Color(0xffB8B8B8)),
+          icon: Image.asset(profileBottomNavBar,
+              color: index == 3
+                  ? const Color(0xff186FF2)
+                  : const Color(0xffB8B8B8)),
+        ),
       ],
       popActionScreens: PopActionScreensType.all,
       popAllScreensOnTapOfSelectedTab: true,
