@@ -158,7 +158,7 @@ class _SearchViewState extends State<SearchView> {
                         Text(
                           "No matching results",
                           style: TextStyle(
-                              fontSize: 1.sp,
+                              fontSize: 15.sp,
                               color: Colors.grey,
                               fontWeight: FontWeight.bold),
                         ),
@@ -295,11 +295,11 @@ class _SearchViewState extends State<SearchView> {
                       ),
                     ),
                     Positioned(
-                      top: 19.h,
+                      top: 18.h,
                       left: 30,
                       child: Container(
                         padding: const EdgeInsets.all(8),
-                        height: 4.h,
+                        height: 5.h,
                         decoration: const BoxDecoration(
                           color: Color(0XFF4D5652),
                           borderRadius: BorderRadius.all(Radius.circular(59)),
@@ -377,7 +377,7 @@ class _SearchViewState extends State<SearchView> {
                   color: const Color(0XFF232323))),
         ),
         SizedBox(
-          height: 23.h,
+          height: 22.h,
           child: ListView.builder(
             shrinkWrap: true,
             physics: const BouncingScrollPhysics(),
@@ -415,7 +415,8 @@ class _SearchViewState extends State<SearchView> {
                     ),
                     Positioned(
                       top: 17.h,
-                      left: 35,
+                      left: 20,
+                      right: 20,
                       child: Center(
                         child: Text(
                           recommend.name,
@@ -430,7 +431,7 @@ class _SearchViewState extends State<SearchView> {
                       top: 14.h,
                       right: 13,
                       child: Container(
-                        width: 15.w,
+                        width: 20.w,
                         height: 20,
                         decoration: BoxDecoration(
                           color: const Color(0XFF4D5652),

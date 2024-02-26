@@ -198,7 +198,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 9.h,
+                      height: 7.h,
                       width: double.infinity,
                       child: ListView.builder(
                         shrinkWrap: true,
@@ -246,7 +246,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
           ),
           bottomNavigationBar: Container(
             width: double.infinity,
-            height: 12.h,
+            height: 9.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -254,7 +254,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.fromLTRB(20, 2, 56, 30),
+                  margin: const EdgeInsets.fromLTRB(20, 0, 56, 10),
                   height: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
