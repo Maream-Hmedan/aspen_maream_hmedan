@@ -1,30 +1,34 @@
 import 'package:aspen_project/utils/ui/packages/custom_searchable_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
-class CustomDropDown extends StatelessWidget {
-   CustomDropDown({super.key});
+class CustomDropDown extends StatefulWidget {
+   const CustomDropDown({super.key});
 
   static const List<String> _locationList = [
     'Aspen,USA',
     'Jordan,Amman',
   ];
 
+  @override
+  State<CustomDropDown> createState() => _CustomDropDownState();
+}
+
+class _CustomDropDownState extends State<CustomDropDown> {
   String _selectedValue = 'Aspen,USA';
 
   @override
   Widget build(BuildContext context) {
     return CustomSearchableDropDown(
-      items: _locationList,
+      items: CustomDropDown._locationList,
       enabled: true,
       label: _selectedValue,
       onChanged: (value) {
         _selectedValue = value;
-    
+
       },
-    
-    
-      dropDownMenuItems: _locationList.map((e) {
+
+
+      dropDownMenuItems: CustomDropDown._locationList.map((e) {
             return e;
           }).toList() ,
       menuPadding: const EdgeInsets.only(top: 2),

@@ -1,11 +1,12 @@
 import 'package:aspen_project/model/facilities_model.dart';
 import 'package:aspen_project/model/popular_model.dart';
+import 'package:aspen_project/utils/ui/custom_button.dart';
 import 'package:aspen_project/utils/ui/shared_reference.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../utils/ui/custom_button.dart';
+
 
 class PlaceDetailsScreen extends StatefulWidget {
   final Popular model;

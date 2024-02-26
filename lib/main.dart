@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       return MaterialApp(
         title: "Aspen project",
         debugShowCheckedModeBanner: false,
-        home:  HomeScreen(),
+        home:  const HomeScreen(),
         theme: ThemeData(
           primaryColor: Colors.red,
           fontFamily: "montserrat",

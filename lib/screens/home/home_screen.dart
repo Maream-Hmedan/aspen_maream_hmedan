@@ -1,8 +1,9 @@
+import 'package:aspen_project/screens/bottom_nav_bar/bottom_nav_bar_screen.dart';
 import 'package:aspen_project/utils/ui/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../bottom_nav_bar/bottom_nav_bar_screen.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

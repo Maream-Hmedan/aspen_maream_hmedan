@@ -19,9 +19,8 @@ class ExploreScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(left: 0,top: 15,bottom: 15),
+                    margin: const EdgeInsets.only(top: 15,bottom: 15),
                     width: 150,
-
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
 
@@ -44,7 +43,7 @@ class ExploreScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  CustomDropDown(),
+                  const CustomDropDown(),
                 ],
               ),
               const SearchView(),

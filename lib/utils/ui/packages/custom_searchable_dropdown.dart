@@ -89,7 +89,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
 
   late AnimationController _menuController;
   bool _isExpanded = false;
-  String _selectedValue="";
+
 
   @override
   void initState() {
