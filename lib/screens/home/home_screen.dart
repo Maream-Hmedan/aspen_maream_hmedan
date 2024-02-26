@@ -72,23 +72,25 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 88.h,
-            left: 32,
-            right: 48,
-            child: CustButton(
-              buttonChild: const Text('Explore',
-                style: TextStyle(
-                fontSize: 25,
-                color: Colors.white,),
-            ),  onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const BottomNavBarScreen()),
-              );
-            },
-          )
-          ),
+              top: 88.h,
+              left: 32,
+              right: 48,
+              child: CustButton(
+                buttonChild: const Text(
+                  'Explore',
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BottomNavBarScreen()),
+                  );
+                },
+              )),
         ],
       ),
     );

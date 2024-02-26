@@ -1,9 +1,7 @@
-import 'package:aspen_project/utils/ui/custom_drop_down.dart';
 import 'package:aspen_project/screens/explore/search_view.dart';
+import 'package:aspen_project/utils/ui/Custom_Drop_Down.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
-
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
@@ -14,33 +12,39 @@ class ExploreScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SizedBox(
           width: 100.w,
-          child:  Column(
-
+          child: Column(
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        "Explore",
-                        style: TextStyle(
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w400,
+                  Container(
+                    margin: const EdgeInsets.only(left: 0,top: 15,bottom: 15),
+                    width: 150,
+
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+
+                      children: [
+                        Text(
+                          "Explore",
+                          style: TextStyle(
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                      ),
-                      Text(
-                        '  Aspen',
-                        style: TextStyle(
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black,
+                        Text(
+                          '  Aspen',
+                          style: TextStyle(
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                  const SelectedLocationWidget(),
+                  CustomDropDown(),
                 ],
               ),
               const SearchView(),

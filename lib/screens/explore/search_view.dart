@@ -273,7 +273,7 @@ class _SearchViewState extends State<SearchView> {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, int index) {
               final popular = _popularLocation[index];
-              return InkWell(
+              return GestureDetector(
                 onTap: () {
                   PersistentNavBarNavigator.pushNewScreen(
                     context,

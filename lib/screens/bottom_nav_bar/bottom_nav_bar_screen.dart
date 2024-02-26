@@ -39,21 +39,21 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
       context,
       screens: _bottomTabs.map((e) => e.view).toList(),
       navBarHeight: 90,
-      decoration:  const NavBarDecoration (
-        borderRadius:  BorderRadius.only(topLeft: Radius.circular(32),topRight: Radius.circular(32)),
-        gradient:  LinearGradient (
-          colors:  <Color>[Color(0xfffdfdfd), Color(0xfff5f5f5)],
-          stops:  <double>[0, 1],
+      decoration: const NavBarDecoration(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(32), topRight: Radius.circular(32)),
+        gradient: LinearGradient(
+          colors: <Color>[Color(0xfffdfdfd), Color(0xfff5f5f5)],
+          stops: <double>[0, 1],
         ),
-        boxShadow:  [
+        boxShadow: [
           BoxShadow(
-            color:  Color(0x0c186ff2),
-            offset:  Offset(15, -19),
-            blurRadius:  22,
+            color: Color(0x0c186ff2),
+            offset: Offset(15, -19),
+            blurRadius: 22,
           ),
         ],
       ),
-
       confineInSafeArea: true,
       navBarStyle: NavBarStyle.style6,
       items: [

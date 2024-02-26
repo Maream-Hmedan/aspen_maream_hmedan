@@ -9,6 +9,7 @@ import 'firebase_options.dart';
 
 
 void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -29,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       return MaterialApp(
         title: "Aspen project",
         debugShowCheckedModeBanner: false,
-        home: const HomeScreen(),
+        home:  HomeScreen(),
         theme: ThemeData(
           primaryColor: Colors.red,
           fontFamily: "montserrat",
