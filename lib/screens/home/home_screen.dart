@@ -22,8 +22,8 @@ class HomeScreen extends StatelessWidget {
           ),
           Positioned(
             top: 10.h,
-            left: 57,
-            right: 57,
+            left: 10.h,
+            right: 10.h,
             child: Image.asset(
               aspenLogo,
               fit: BoxFit.fill,
@@ -75,8 +75,8 @@ class HomeScreen extends StatelessWidget {
           ),
           Positioned(
               top: 88.h,
-              left: 32,
-              right: 48,
+              left: 5.h,
+              right: 5.h,
               child: CustButton(
                 buttonChild: const Text(
                   'Explore',

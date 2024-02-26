@@ -5,7 +5,7 @@ const String alleyPalaceRecommend="assets/images/explore_aspen.png";
 const String coeurdesAlpesPopular="assets/images/coourdes_alpea.png";
 const String coeurdesAlpesRecommend="assets/images/luxuriou.png";
 const String heaterFacilities="assets/images/vector.png";
-const String dinnerFacilities="assets/images/luxuriou.png";
+const String dinnerFacilities="assets/images/food.png";
 const String tubFacilities="assets/images/bath.png";
 const String poolFacilities="assets/images/frame.png";
 

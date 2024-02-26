@@ -16,14 +16,15 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
 
   final List<BottomTabModel> _bottomTabs = [
     BottomTabModel(
-        icon: const Icon(Icons.indeterminate_check_box),
+        icon: Image.asset(ticketBottomNavBar),
         view: const ExploreScreen()),
     BottomTabModel(
-        icon: const Icon(Icons.confirmation_number_outlined),
+        icon:  Image.asset(ticketBottomNavBar),
         view: Container()),
     BottomTabModel(
-        icon: const Icon(Icons.favorite_outline_rounded), view: Container()),
-    BottomTabModel(icon: const Icon(Icons.person_outline), view: Container()),
+        icon: Image.asset(heartBottomNavBar), view: Container()),
+    BottomTabModel(icon: Image.asset(
+        profileBottomNavBar), view: Container()),
   ];
 
   @override
@@ -77,10 +78,11 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                   : const Color(0xffB8B8B8)),
         ),
         PersistentBottomNavBarItem(
-          icon: Image.asset(profileBottomNavBar,scale: 0.7,
-              color: index == 3
-                  ? const Color(0xff186FF2)
-                  : const Color(0xffB8B8B8)),
+          icon: Image.asset(
+            profileBottomNavBar,scale: 0.7,
+            color:
+                index == 3 ? const Color(0xff186FF2) : const Color(0xffB8B8B8),
+          ),
         ),
       ],
       popActionScreens: PopActionScreensType.all,
