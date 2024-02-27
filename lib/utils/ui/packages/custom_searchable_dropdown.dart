@@ -82,6 +82,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
   String onSelectLabel = '';
   final searchC = TextEditingController();
   List menuData = [];
+  List menuData2 = [];
   List mainDataListGroup = [];
   List newDataList = [];
 
@@ -89,7 +90,6 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
 
   late AnimationController _menuController;
   bool _isExpanded = false;
-
 
   @override
   void initState() {
@@ -99,16 +99,12 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
       duration: const Duration(milliseconds: 300),
       vsync: this,
     );
-
   }
 
   @override
   Widget build(BuildContext context) {
-
-
     if (widget.initialIndex != null && widget.dropDownMenuItems.isNotEmpty) {
       onSelectLabel = widget.dropDownMenuItems[widget.initialIndex!].toString();
-
     }
 
     if (widget.multiSelect ?? false) {
@@ -294,8 +290,9 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                     ),
                   ),
                   onPressed: () {
-                    _isExpanded = !_isExpanded;
-                    setState(() {});
+                    setState(() {
+                      _isExpanded = !_isExpanded;
+                    });
                     if (widget.enabled == null || widget.enabled == true) {
                       menuData.clear();
                       if (widget.items.isNotEmpty) {
@@ -306,6 +303,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                               '-_-' +
                               i.toString());
 
+                          menuData2.add(widget.dropDownMenuItems[i].toString());
                         }
                         mainDataListGroup = menuData;
                         newDataList = mainDataListGroup;
@@ -316,6 +314,8 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                             _menuController.forward();
                           } else {
                             _menuController.reverse();
+
+                            _isExpanded = false;
                           }
                         } else {
                           showDialogueBox(context);
@@ -367,6 +367,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
   }
 
   mainScreen(setState) {
+    _isExpanded = false;
     return Padding(
       padding: widget.menuPadding ?? EdgeInsets.all(0),
       child: Container(
@@ -390,8 +391,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                             color: widget.primaryColor ?? Colors.blue,
                           ),
                   ),
-                )
-            ),
+                )),
             Visibility(
                 visible: widget.multiSelect ?? false,
                 child: Row(
@@ -415,6 +415,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                         for (int i = 0; i < newDataList.length; i++) {
                           selectedValues.add(newDataList[i]);
                         }
+
                         setState(() {});
                       },
                     ),
@@ -566,10 +567,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
             ),
             onChanged: (v) {
               onItemChanged(v);
-              setState(() {
-
-
-              });
+              setState(() {});
             },
           ),
         ),
@@ -641,25 +639,30 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                           height: 35,
                           width: 40.w,
                           decoration: BoxDecoration(
-                            color: widget.label.toString()== newDataList[index].split('-_-')[0].toString()
+                            color: widget.label.toString() ==
+                                menuData2
+                                    .where((string) => string.toLowerCase().contains(widget.label.toString().toLowerCase()))
+                                    .toList().first
                                 ? Colors.white
-                                : Colors.grey.shade200,
+                                : null,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-
                               Text(
-                                newDataList[index].split('-_-')[0].toString(),
-                                style:  TextStyle(
-                                    fontSize: 10.sp,
-                                    color:Colors.black),
+                                menuData2[index].toString(),
+                                style: TextStyle(
+                                    fontSize: 10.sp, color: Colors.black),
                               ),
-
-                              if (widget.label.toString() == newDataList[index].split('-_-')[0].toString())
-                                const Icon(Icons.check,
+                              if (widget.label.toString() ==
+                                  menuData2
+                                      .where((string) => string.toLowerCase().contains(widget.label.toString().toLowerCase()))
+                                      .toList().first)
+                                const Icon(
+                                  Icons.check,
                                   color: Color(0xff0858D0),
-                                  size: 16,),
+                                  size: 16,
+                                ),
                             ],
                           ),
                         ),
@@ -688,7 +691,6 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                       if (menuData[i] == newDataList[index]) {
                         onSelectLabel = menuData[i].split('-_-')[0].toString();
                         widget.onChanged(widget.items[i]);
-
                       }
                     }
                     if (widget.menuMode ?? false) {
@@ -710,7 +712,6 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
       newDataList = mainDataListGroup
           .where((string) => string.toLowerCase().contains(value.toLowerCase()))
           .toList();
-
     });
   }
 }

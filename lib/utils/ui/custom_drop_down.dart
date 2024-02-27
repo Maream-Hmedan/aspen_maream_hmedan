@@ -2,9 +2,9 @@ import 'package:aspen_project/utils/ui/packages/custom_searchable_dropdown.dart'
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 class CustomDropDown extends StatefulWidget {
-   const CustomDropDown({super.key});
+    const CustomDropDown({super.key});
 
-  static const List<String> _locationList = [
+  static final List<String> _locationList = [
     'Aspen,USA',
     'Jordan,Amman',
   ];

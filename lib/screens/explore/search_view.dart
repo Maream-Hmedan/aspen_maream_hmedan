@@ -39,8 +39,8 @@ class _SearchViewState extends State<SearchView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 85.h,
       width: 100.w,
+      height: 85.h,
       child: Column(
         children: [
           SizedBox(

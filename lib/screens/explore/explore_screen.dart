@@ -1,5 +1,5 @@
 import 'package:aspen_project/screens/explore/search_view.dart';
-import 'package:aspen_project/utils/ui/Custom_Drop_Down.dart';
+import 'package:aspen_project/utils/ui/custom_drop_down.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -9,9 +9,9 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SizedBox(
-          width: 100.w,
+      body: SizedBox(
+        width: 100.w,
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Row(
@@ -23,7 +23,7 @@ class ExploreScreen extends StatelessWidget {
                      width: 150,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
-
+              
                       children: [
                         Text(
                           "Explore",

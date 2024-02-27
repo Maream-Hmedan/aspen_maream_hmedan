@@ -7,8 +7,6 @@ import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-
-
 class PlaceDetailsScreen extends StatefulWidget {
   final Popular model;
 
@@ -35,7 +33,8 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
       child: PopScope(
         canPop: false,
         child: Scaffold(
-          body: Padding(
+          body: Container(
+            height: 100.h,
             padding: const EdgeInsets.all(15),
             child: Column(
               children: [
@@ -112,82 +111,77 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                 const SizedBox(
                   height: 3,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      widget.model.name,
-                      style:  TextStyle(
-                          fontSize: 17.sp, fontWeight: FontWeight.w600),
-                    ),
-                     Column(
-                      children: [
-                        const SizedBox(
-                          height: 3,
-                        ),
-                        Text(
-                          "Show map",
-                          style: TextStyle(
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w700,
-                              color: const Color(0xff196EEE)),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                Row(
-                  children: [
-                    const Icon(Icons.star, color: Color(0XFFDF9652), size: 12),
-                    Text(" ${widget.model.rate} (355 Reviews)",
-                        style:  TextStyle(
-                            fontSize: 8.sp,
-                            color: const Color(0xff606060),
-                            fontWeight: FontWeight.w400)),
-                  ],
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  widget.model.description,
-                  style:  TextStyle(
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.black,
-                  ),
-                ),
                 Container(
-                  margin: const EdgeInsets.fromLTRB(5, 10, 0, 0),
-                  width: double.infinity,
-                  child:  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                  height: 37.h,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            widget.model.name,
+                            style: TextStyle(
+                                fontSize: 17.sp, fontWeight: FontWeight.w600),
+                          ),
+                          Text(
+                            "Show map",
+                            style: TextStyle(
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w700,
+                                color: const Color(0xff196EEE)),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      Row(
+                        children: [
+                          const Icon(Icons.star,
+                              color: Color(0XFFDF9652), size: 12),
+                          Text(" ${widget.model.rate} (355 Reviews)",
+                              style: TextStyle(
+                                  fontSize: 8.sp,
+                                  color: const Color(0xff606060),
+                                  fontWeight: FontWeight.w400)),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
                       Text(
-                        'Read more',
+                        widget.model.description,
                         style: TextStyle(
-                          color: const Color(0xff176FF2),
                           fontSize: 11.sp,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.black,
                         ),
                       ),
-                      const Icon(
-                        Icons.keyboard_arrow_down,
-                        size: 24,
-                        color: Color(0xff176FF2),
-                      )
-                    ],
-                  ),
-                ),
-                Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.fromLTRB(5, 5, 0, 10),
-                      width: double.infinity,
-                      child:  Text(
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Read more',
+                            style: TextStyle(
+                              color: const Color(0xff176FF2),
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          const Icon(
+                            Icons.keyboard_arrow_down,
+                            size: 24,
+                            color: Color(0xff176FF2),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
                         'Facilities',
                         style: TextStyle(
                           fontSize: 14.sp,
@@ -196,82 +190,75 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                           color: Colors.black,
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 7.h,
-                      width: double.infinity,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        physics: const BouncingScrollPhysics(),
-                        itemCount: _facilities.length,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, int index) {
-                          final facilities = _facilities[index];
-                          return Container(
-                            height: 74,
-                            width: 85,
-                            margin: const EdgeInsets.only(right: 10),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              gradient: const LinearGradient(
-                                colors: <Color>[
-                                  Color(0x0c176ef2),
-                                  Color(0x0c186eee)
-                                ],
-                                stops: <double>[0, 1],
-                              ),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(facilities.image,
-                                    width: 32, height: 32, fit: BoxFit.fill),
-                                Text(
-                                  facilities.label,
-                                  style: const TextStyle(
-                                    fontSize: 10,
-                                    color: Color(0xffB8B8B8),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        },
+                      const SizedBox(
+                        height: 15,
                       ),
-                    ),
-                  ],
+                      Expanded(
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          physics: const BouncingScrollPhysics(),
+                          itemCount: _facilities.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, int index) {
+                            final facilities = _facilities[index];
+                            return Container(
+                              height: 74,
+                              width: 85,
+                              margin: const EdgeInsets.only(right: 10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16),
+                                gradient: const LinearGradient(
+                                  colors: <Color>[
+                                    Color(0x0c176ef2),
+                                    Color(0x0c186eee)
+                                  ],
+                                  stops: <double>[0, 1],
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(facilities.image,
+                                      width: 32, height: 32, fit: BoxFit.fill),
+                                  Text(
+                                    facilities.label,
+                                    style: const TextStyle(
+                                      fontSize: 10,
+                                      color: Color(0xffB8B8B8),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
-          bottomNavigationBar: Container(
+          bottomNavigationBar: SizedBox(
             width: double.infinity,
             height: 9.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-            ),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.fromLTRB(20, 0, 56, 10),
-                  height: double.infinity,
+                  margin: const EdgeInsets.fromLTRB(20, 10, 56, 10),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 5),
-                        child:  Text(
-                          'Price',
-                          style: TextStyle(
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w500,
-                            height: 1.25,
-                            color: Colors.black,
-                          ),
+                      Text(
+                        'Price',
+                        style: TextStyle(
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w500,
+                          height: 1.25,
+                          color: Colors.black,
                         ),
                       ),
-                       Text(
+                      Text(
                         '\$199',
                         style: TextStyle(
                           fontSize: 17.sp,
@@ -284,30 +271,32 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 30),
+                  margin: const EdgeInsets.only(bottom: 10, right: 10),
                   child: CustButton(
                     width: 30.h,
                     buttonChild: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Book Now',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              height: 1.2575,
-                              color: Colors.white,
-                            ),
-                          ),
-                          SizedBox(width: 5,),
-                          Icon(
-                            Icons.arrow_forward_rounded,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Book Now',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            height: 1.2575,
                             color: Colors.white,
-                            size: 24,
-                          )
-                        ],
-                      ),
-                  onTap: (){},
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Icon(
+                          Icons.arrow_forward_rounded,
+                          color: Colors.white,
+                          size: 24,
+                        )
+                      ],
+                    ),
+                    onTap: () {},
                   ),
                 ),
               ],
