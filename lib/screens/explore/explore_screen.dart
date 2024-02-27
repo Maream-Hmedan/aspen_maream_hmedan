@@ -9,9 +9,9 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        width: 100.w,
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: SizedBox(
+          width: 100.w,
           child: Column(
             children: [
               Row(

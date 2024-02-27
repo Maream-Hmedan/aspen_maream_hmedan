@@ -163,7 +163,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
             children: [
               Container(
                 decoration: widget.decoration,
-                width: 57.w,
+                width: 45.w,
                 child: TextButton(
                   style: TextButton.styleFrom(
                       backgroundColor: widget.backgroundColor,

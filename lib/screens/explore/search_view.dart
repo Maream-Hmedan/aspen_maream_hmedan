@@ -376,8 +376,8 @@ class _SearchViewState extends State<SearchView> {
                   fontWeight: FontWeight.w600,
                   color: const Color(0XFF232323))),
         ),
-        SizedBox(
-          height: 22.h,
+       SizedBox(
+          height: 21.h,
           child: ListView.builder(
             shrinkWrap: true,
             physics: const BouncingScrollPhysics(),
@@ -385,12 +385,14 @@ class _SearchViewState extends State<SearchView> {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, int index) {
               final recommend = _recommendedLocation[index];
-              return Container(
+              return
+                Container(
                 width: 44.w,
                 margin: const EdgeInsets.only(
                     left: 20, right: 20, bottom: 5, top: 5),
                 padding: const EdgeInsets.all(4),
                 decoration: BoxDecoration(
+
                   boxShadow: const [
                     BoxShadow(
                       color: Color(0xff97A0B2),
@@ -404,17 +406,13 @@ class _SearchViewState extends State<SearchView> {
                 ),
                 child: Stack(
                   children: [
-                    Container(
-                      height: 15.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(24),
-                        image: DecorationImage(
-                            image: AssetImage(recommend.image),
-                            fit: BoxFit.cover),
-                      ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(24),
+                      child:Image.asset(recommend.image,fit: BoxFit.cover),
                     ),
+
                     Positioned(
-                      top: 17.h,
+                      top: 13.h,
                       left: 20,
                       right: 20,
                       child: Center(
@@ -428,7 +426,7 @@ class _SearchViewState extends State<SearchView> {
                       ),
                     ),
                     Positioned(
-                      top: 14.h,
+                      top: 10.h,
                       right: 13,
                       child: Container(
                         width: 20.w,

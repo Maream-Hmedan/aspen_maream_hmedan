@@ -111,7 +111,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                 const SizedBox(
                   height: 3,
                 ),
-                Container(
+                SizedBox(
                   height: 37.h,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
