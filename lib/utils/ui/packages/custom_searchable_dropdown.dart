@@ -82,7 +82,6 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
   String onSelectLabel = '';
   final searchC = TextEditingController();
   List menuData = [];
-  List menuData2 = [];
   List mainDataListGroup = [];
   List newDataList = [];
 
@@ -163,14 +162,14 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
             children: [
               Container(
                 decoration: widget.decoration,
-                width: 45.w,
+                width: 48.w,
                 child: TextButton(
                   style: TextButton.styleFrom(
                       backgroundColor: widget.backgroundColor,
                       primary: widget.primaryColor ?? Colors.black,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                   child: Padding(
-                    padding: widget.padding ?? EdgeInsets.all(5.0),
+                    padding: widget.padding ?? const EdgeInsets.all(5.0),
                     child: Row(
                       children: [
                         widget.prefixIcon ?? Container(),
@@ -196,7 +195,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                                                         widget.primaryColor ??
                                                             Colors.green,
                                                     borderRadius:
-                                                        BorderRadius.all(
+                                                        const BorderRadius.all(
                                                       Radius.circular(5.0),
                                                     )),
                                                 child: Padding(
@@ -208,7 +207,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                                                         .split('-_-')[0]
                                                         .toString(),
                                                     style: widget.labelStyle ??
-                                                        TextStyle(
+                                                        const TextStyle(
                                                             color: Colors.white,
                                                             fontSize: 12),
                                                   ),
@@ -239,7 +238,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                                                     widget.multiSelectTag! +
                                                     ' selected',
                                         style: widget.labelStyle ??
-                                            TextStyle(color: Colors.grey),
+                                            const TextStyle(color: Colors.grey),
                                       ))
                             : Expanded(
                                 child: Text(
@@ -268,7 +267,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                             child: TextButton(
                               style: TextButton.styleFrom(
                                   primary: widget.primaryColor ?? Colors.black),
-                              child: Icon(
+                              child: const Icon(
                                 Icons.keyboard_arrow_up,
                               ),
                               onPressed: () {
@@ -302,8 +301,6 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                           menuData.add(widget.dropDownMenuItems[i].toString() +
                               '-_-' +
                               i.toString());
-
-                          menuData2.add(widget.dropDownMenuItems[i].toString());
                         }
                         mainDataListGroup = menuData;
                         newDataList = mainDataListGroup;
@@ -352,7 +349,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
         barrierDismissible: true,
         builder: (context) {
           return Padding(
-            padding: widget.menuPadding ?? EdgeInsets.all(15),
+            padding: widget.menuPadding ?? const EdgeInsets.all(15),
             child: StatefulBuilder(builder: (context, setState) {
               return Material(
                 color: Colors.transparent,
@@ -369,7 +366,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
   mainScreen(setState) {
     _isExpanded = false;
     return Padding(
-      padding: widget.menuPadding ?? EdgeInsets.all(0),
+      padding: widget.menuPadding ?? const EdgeInsets.all(0),
       child: Container(
         color: Colors.white,
         child: Column(
@@ -533,27 +530,27 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
               fillColor: Colors.white,
               filled: true,
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(5)),
+                borderRadius: const BorderRadius.all(Radius.circular(5)),
                 borderSide: BorderSide(
                     color: widget.primaryColor ?? Colors.grey, width: 2),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(5)),
+                borderRadius: const BorderRadius.all(Radius.circular(5)),
                 borderSide: BorderSide(
                     color: widget.primaryColor ?? Colors.grey, width: 2),
               ),
               disabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(5)),
+                borderRadius: const BorderRadius.all(Radius.circular(5)),
                 borderSide: BorderSide(
                     color: widget.primaryColor ?? Colors.grey, width: 2),
               ),
               errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(5)),
+                borderRadius: const BorderRadius.all(Radius.circular(5)),
                 borderSide: BorderSide(
                     color: widget.primaryColor ?? Colors.grey, width: 2),
               ),
               focusedErrorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(5)),
+                borderRadius: const BorderRadius.all(Radius.circular(5)),
                 borderSide: BorderSide(
                     color: widget.primaryColor ?? Colors.grey, width: 2),
               ),
@@ -561,7 +558,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                 Icons.search,
                 color: widget.primaryColor ?? Colors.black,
               ),
-              contentPadding: EdgeInsets.all(8),
+              contentPadding: const EdgeInsets.all(8),
               hintText: widget.dropdownHintText ?? 'Search Here...',
               isDense: true,
             ),
@@ -578,7 +575,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
   mainList(setState) {
     return Scrollbar(
       child: Container(
-        width: 55.w,
+        width: 48.w,
         decoration: BoxDecoration(
           color: widget.dropdownBackgroundColor,
           borderRadius: BorderRadius.circular(7),
@@ -592,7 +589,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
               return TextButton(
                 style: TextButton.styleFrom(
                     primary: widget.primaryColor ?? Colors.black,
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
@@ -637,27 +634,23 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                       Expanded(
                         child: Container(
                           height: 35,
-                          width: 40.w,
                           decoration: BoxDecoration(
-                            color: widget.label.toString() ==
-                                menuData2
-                                    .where((string) => string.toLowerCase().contains(widget.label.toString().toLowerCase()))
-                                    .toList().first
+                            color: newDataList[index].contains(widget.label)
                                 ? Colors.white
                                 : null,
                           ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
+                              const SizedBox(width:10,),
                               Text(
-                                menuData2[index].toString(),
-                                style: TextStyle(
-                                    fontSize: 10.sp, color: Colors.black),
+                                newDataList[index].split('-_-')[0].toString(),
+                                style: widget.dropdownItemStyle ??
+                                    TextStyle(color: Colors.grey[700]),
                               ),
-                              if (widget.label.toString() ==
-                                  menuData2
-                                      .where((string) => string.toLowerCase().contains(widget.label.toString().toLowerCase()))
-                                      .toList().first)
+                              const SizedBox(width: 7,),
+                              if (newDataList[index].contains(widget.label))
                                 const Icon(
                                   Icons.check,
                                   color: Color(0xff0858D0),

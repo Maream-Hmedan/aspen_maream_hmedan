@@ -1,8 +1,9 @@
 import 'package:aspen_project/utils/ui/packages/custom_searchable_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+
 class CustomDropDown extends StatefulWidget {
-    const CustomDropDown({super.key});
+  const CustomDropDown({super.key});
 
   static final List<String> _locationList = [
     'Aspen,USA',
@@ -24,18 +25,16 @@ class _CustomDropDownState extends State<CustomDropDown> {
       label: _selectedValue,
       onChanged: (value) {
         _selectedValue = value;
-
+        setState(() {});
       },
-
-
       dropDownMenuItems: CustomDropDown._locationList.map((e) {
-            return e;
-          }).toList() ,
+        return e;
+      }).toList(),
       menuPadding: const EdgeInsets.only(top: 2),
       showLabelInMenu: false,
       dropdownItemStyle: const TextStyle(fontSize: 14, color: Colors.black),
       dropdownBackgroundColor: Colors.grey.shade200,
-      labelStyle:  TextStyle(
+      labelStyle: TextStyle(
         fontSize: 10.sp,
         fontWeight: FontWeight.w400,
         height: 1.25,

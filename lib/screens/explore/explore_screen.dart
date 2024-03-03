@@ -20,7 +20,6 @@ class ExploreScreen extends StatelessWidget {
                 children: [
                   Container(
                     margin: const EdgeInsets.only(top: 15,bottom: 15),
-                     width: 150,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
               
