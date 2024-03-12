@@ -1,8 +1,7 @@
+// ignore_for_file: library_private_types_in_public_api
+
 library custom_searchable_dropdown;
-
 import 'dart:convert';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -39,7 +38,7 @@ class CustomSearchableDropDown extends StatefulWidget {
   final TextAlign? labelAlign;
   final ValueChanged onChanged;
 
-  CustomSearchableDropDown({
+  CustomSearchableDropDown({super.key,
     required this.items,
     required this.label,
     required this.onChanged,
@@ -119,9 +118,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                   widget.initialValue!.isNotEmpty) {
                 if (widget.initialValue![j]['value'] ==
                     widget.items[i][widget.initialValue![j]['parameter']]) {
-                  selectedValues.add(widget.dropDownMenuItems[i].toString() +
-                      '-_-' +
-                      i.toString());
+                  selectedValues.add('${widget.dropDownMenuItems[i]}-_-$i');
 
                   setState(() {});
                 }
@@ -165,8 +162,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                 width: 48.w,
                 child: TextButton(
                   style: TextButton.styleFrom(
-                      backgroundColor: widget.backgroundColor,
-                      primary: widget.primaryColor ?? Colors.black,
+                      foregroundColor: widget.primaryColor ?? Colors.black, backgroundColor: widget.backgroundColor,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                   child: Padding(
                     padding: widget.padding ?? const EdgeInsets.all(5.0),
@@ -190,7 +186,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                                                   const EdgeInsets.fromLTRB(
                                                       5, 3, 5, 3),
                                               child: Container(
-                                                decoration: new BoxDecoration(
+                                                decoration:  BoxDecoration(
                                                     color:
                                                         widget.primaryColor ??
                                                             Colors.green,
@@ -220,23 +216,11 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                                     : Text(
                                         selectedValues.length == 1
                                             ? widget.multiSelectTag == null
-                                                ? selectedValues.length
-                                                        .toString() +
-                                                    ' values selected'
-                                                : selectedValues.length
-                                                        .toString() +
-                                                    ' ' +
-                                                    widget.multiSelectTag! +
-                                                    ' selected'
+                                                ? '${selectedValues.length} values selected'
+                                                : '${selectedValues.length} ${widget.multiSelectTag!} selected'
                                             : widget.multiSelectTag == null
-                                                ? selectedValues.length
-                                                        .toString() +
-                                                    ' values selected'
-                                                : selectedValues.length
-                                                        .toString() +
-                                                    ' ' +
-                                                    widget.multiSelectTag! +
-                                                    ' selected',
+                                                ? '${selectedValues.length} values selected'
+                                                : '${selectedValues.length} ${widget.multiSelectTag!} selected',
                                         style: widget.labelStyle ??
                                             const TextStyle(color: Colors.grey),
                                       ))
@@ -262,11 +246,12 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                               )),
                         Visibility(
                             visible: (widget.showClearButton != null &&
-                                widget.showClearButton == true &&
-                                onSelectLabel != null),
+                                widget.showClearButton == true
+                               // && onSelectLabel != null
+                            ),
                             child: TextButton(
                               style: TextButton.styleFrom(
-                                  primary: widget.primaryColor ?? Colors.black),
+                                  foregroundColor: widget.primaryColor ?? Colors.black),
                               child: const Icon(
                                 Icons.keyboard_arrow_up,
                               ),
@@ -298,9 +283,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                         for (int i = 0;
                             i < widget.dropDownMenuItems.length;
                             i++) {
-                          menuData.add(widget.dropDownMenuItems[i].toString() +
-                              '-_-' +
-                              i.toString());
+                          menuData.add('${widget.dropDownMenuItems[i]}-_-$i');
                         }
                         mainDataListGroup = menuData;
                         newDataList = mainDataListGroup;
@@ -395,8 +378,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                   children: [
                     TextButton(
                       style: TextButton.styleFrom(
-                          primary: widget.primaryColor ?? Colors.black,
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                          foregroundColor: widget.primaryColor ?? Colors.black, tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                       child: Text(
                         'Select All',
                         style: widget.labelStyle != null
@@ -418,8 +400,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                     ),
                     TextButton(
                       style: TextButton.styleFrom(
-                          primary: widget.primaryColor ?? Colors.black,
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                          foregroundColor: widget.primaryColor ?? Colors.black, tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                       child: Text(
                         'Clear All',
                         style: widget.labelStyle != null
@@ -480,8 +461,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                   visible: (widget.multiSelect ?? false),
                   child: TextButton(
                     style: TextButton.styleFrom(
-                        primary: widget.primaryColor ?? Colors.black,
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                        foregroundColor: widget.primaryColor ?? Colors.black, tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                     child: Text(
                       'Done',
                       style: widget.labelStyle != null
@@ -588,8 +568,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
             itemBuilder: (BuildContext context, int index) {
               return TextButton(
                 style: TextButton.styleFrom(
-                    primary: widget.primaryColor ?? Colors.black,
-                    padding: const EdgeInsets.all(8),
+                    foregroundColor: widget.primaryColor ?? Colors.black, padding: const EdgeInsets.all(8),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),

@@ -28,6 +28,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
+        builder: (context, child) => MediaQuery(
+          data: MediaQuery.of(context).copyWith(
+            boldText: false, textScaler: const TextScaler.linear(1.0),
+          ),
+          child: child!,
+        ),
         title: "Aspen project",
         debugShowCheckedModeBanner: false,
         home:  const HomeScreen(),
