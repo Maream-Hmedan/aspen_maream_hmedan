@@ -5,10 +5,7 @@ import 'package:sizer/sizer.dart';
 
 import 'firebase_options.dart';
 
-
-
-
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -30,13 +27,14 @@ class _MyAppState extends State<MyApp> {
       return MaterialApp(
         builder: (context, child) => MediaQuery(
           data: MediaQuery.of(context).copyWith(
-            boldText: false, textScaler: const TextScaler.linear(1.0),
+            boldText: false,
+            textScaler: const TextScaler.linear(1.0),
           ),
           child: child!,
         ),
         title: "Aspen project",
         debugShowCheckedModeBanner: false,
-        home:  const HomeScreen(),
+        home: const HomeScreen(),
         theme: ThemeData(
           primaryColor: Colors.red,
           fontFamily: "montserrat",

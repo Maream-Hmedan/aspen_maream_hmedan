@@ -614,8 +614,7 @@ class _CustomSearchableDropDownState extends State<CustomSearchableDropDown>
                         child: Container(
                           height: 35,
                           decoration: BoxDecoration(
-                            color: newDataList[index].contains(widget.label)
-                                ? Colors.white
+                            color: newDataList[index].contains(widget.label)                                ? Colors.white
                                 : null,
                           ),
                           child: Row(

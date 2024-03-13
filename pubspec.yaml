@@ -33,6 +33,12 @@ dependencies:
   favorite_button: ^0.0.4
   shared_preferences: ^2.2.2
   sizer: ^2.0.15
+  carousel_slider: 4.2.1
+  http: 1.2.0
+  shimmer:
+  url_launcher:
+  flutter_local_notifications: 10.0.0
+  firebase_messaging:
   firebase_core:
   flutter:
     sdk: flutter

@@ -1,4 +1,5 @@
 import 'package:aspen_project/configuration/app_images.dart';
+import 'package:aspen_project/screens/ticket/ticket_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -16,15 +17,12 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
 
   final List<BottomTabModel> _bottomTabs = [
     BottomTabModel(
+        icon: Image.asset(homeBottomNavBar), view: const ExploreScreen()),
+    BottomTabModel(
         icon: Image.asset(ticketBottomNavBar),
-        view: const ExploreScreen()),
-    BottomTabModel(
-        icon:  Image.asset(ticketBottomNavBar),
-        view: Container()),
-    BottomTabModel(
-        icon: Image.asset(heartBottomNavBar), view: Container()),
-    BottomTabModel(icon: Image.asset(
-        profileBottomNavBar), view: Container()),
+        view: const TicketScreen()),
+    BottomTabModel(icon: Image.asset(heartBottomNavBar), view: Container()),
+    BottomTabModel(icon: Image.asset(profileBottomNavBar), view: Container()),
   ];
 
   @override
@@ -60,26 +58,27 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
       navBarStyle: NavBarStyle.style6,
       items: [
         PersistentBottomNavBarItem(
-          icon: Image.asset(homeBottomNavBar,scale: 0.7,
-              color: index == 0
-                  ? null
-                  : const Color(0xffB8B8B8)),
+          icon: Image.asset(homeBottomNavBar,
+              scale: 0.7, color: index == 0 ? null : const Color(0xffB8B8B8)),
         ),
         PersistentBottomNavBarItem(
-          icon: Image.asset(ticketBottomNavBar,scale: 0.7,
+          icon: Image.asset(ticketBottomNavBar,
+              scale: 0.7,
               color: index == 1
                   ? const Color(0xff186FF2)
                   : const Color(0xffB8B8B8)),
         ),
         PersistentBottomNavBarItem(
-          icon: Image.asset(heartBottomNavBar,scale: 0.7,
+          icon: Image.asset(heartBottomNavBar,
+              scale: 0.7,
               color: index == 2
                   ? const Color(0xff186FF2)
                   : const Color(0xffB8B8B8)),
         ),
         PersistentBottomNavBarItem(
           icon: Image.asset(
-            profileBottomNavBar,scale: 0.7,
+            profileBottomNavBar,
+            scale: 0.7,
             color:
                 index == 3 ? const Color(0xff186FF2) : const Color(0xffB8B8B8),
           ),
