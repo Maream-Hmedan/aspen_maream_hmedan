@@ -2,7 +2,9 @@ import 'package:aspen_project/configuration/app_images.dart';
 import 'package:aspen_project/model/popular_model.dart';
 import 'package:aspen_project/model/recommended_model.dart';
 import 'package:aspen_project/screens/details/place_details_screen.dart';
+import 'package:aspen_project/screens/theme/theme_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:sizer/sizer.dart';
 
@@ -14,6 +16,7 @@ class SearchView extends StatefulWidget {
 }
 
 class _SearchViewState extends State<SearchView> {
+  ThemeController themeController = Get.put(ThemeController());
   final List<TabModel> _tab = [];
   List<Popular> _popularLocation = [];
   List<Recommended> _recommendedLocation = [];
@@ -77,7 +80,7 @@ class _SearchViewState extends State<SearchView> {
               },
               decoration: InputDecoration(
                 filled: true,
-                fillColor: const Color(0xFFF3F8FE),
+                fillColor:Theme.of(context).colorScheme.onPrimaryContainer,
                 prefixIcon: const Icon(
                   Icons.search,
                   color: Color(0xffB8B8B8),
@@ -111,7 +114,7 @@ class _SearchViewState extends State<SearchView> {
                             width: 89,
                             height: 41,
                             decoration: BoxDecoration(
-                                color: const Color(0xffF3F8FE),
+                                color:  Theme.of(context).colorScheme.onPrimaryContainer,
                                 borderRadius: BorderRadius.circular(32)),
                             child: Center(
                               child: Text(
@@ -376,7 +379,7 @@ class _SearchViewState extends State<SearchView> {
                   fontWeight: FontWeight.w600,
                   color: const Color(0XFF232323))),
         ),
-       SizedBox(
+        SizedBox(
           height: 21.h,
           child: ListView.builder(
             shrinkWrap: true,
@@ -385,20 +388,18 @@ class _SearchViewState extends State<SearchView> {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, int index) {
               final recommend = _recommendedLocation[index];
-              return
-                Container(
+              return Container(
                 width: 44.w,
                 margin: const EdgeInsets.only(
                     left: 20, right: 20, bottom: 5, top: 5),
                 padding: const EdgeInsets.all(4),
                 decoration: BoxDecoration(
-
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
-                      color: Color(0xff97A0B2),
+                      color: Theme.of(context).colorScheme.secondary,
                       spreadRadius: 0,
                       blurRadius: 20,
-                      offset: Offset(0, 4),
+                      offset: const Offset(0, 4),
                     ),
                   ],
                   borderRadius: BorderRadius.circular(16),
@@ -408,9 +409,8 @@ class _SearchViewState extends State<SearchView> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(24),
-                      child:Image.asset(recommend.image,fit: BoxFit.cover),
+                      child: Image.asset(recommend.image, fit: BoxFit.cover),
                     ),
-
                     Positioned(
                       top: 13.h,
                       left: 20,

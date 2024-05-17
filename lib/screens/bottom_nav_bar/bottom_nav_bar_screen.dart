@@ -1,4 +1,5 @@
 import 'package:aspen_project/configuration/app_images.dart';
+import 'package:aspen_project/screens/theme/switcher_button.dart';
 import 'package:aspen_project/screens/ticket/ticket_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -22,7 +23,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
         icon: Image.asset(ticketBottomNavBar),
         view: const TicketScreen()),
     BottomTabModel(icon: Image.asset(heartBottomNavBar), view: Container()),
-    BottomTabModel(icon: Image.asset(profileBottomNavBar), view: Container()),
+    BottomTabModel(icon: Image.asset(profileBottomNavBar), view:  const SwitchButton()),
   ];
 
   @override

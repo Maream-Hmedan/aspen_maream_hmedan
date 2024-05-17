@@ -1,4 +1,4 @@
-import 'package:aspen_project/theme/theme_controller.dart';
+import 'package:aspen_project/screens/theme/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';

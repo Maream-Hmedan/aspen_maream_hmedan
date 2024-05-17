@@ -50,7 +50,7 @@ class _PlaceDetailsScreenState extends State<PlaceDetailsScreen> {
                           height: 40,
                           width: 40,
                           decoration: BoxDecoration(
-                              color: const Color(0xfFF3F8FE),
+                              color: Theme.of(context).colorScheme.primary,
                               borderRadius: BorderRadius.circular(8)),
                           child: IconButton(
                               onPressed: () {
