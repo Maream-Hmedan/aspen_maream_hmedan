@@ -2,9 +2,7 @@ import 'package:aspen_project/configuration/app_images.dart';
 import 'package:aspen_project/model/popular_model.dart';
 import 'package:aspen_project/model/recommended_model.dart';
 import 'package:aspen_project/screens/details/place_details_screen.dart';
-import 'package:aspen_project/screens/theme/theme_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:sizer/sizer.dart';
 
@@ -16,7 +14,6 @@ class SearchView extends StatefulWidget {
 }
 
 class _SearchViewState extends State<SearchView> {
-  ThemeController themeController = Get.put(ThemeController());
   final List<TabModel> _tab = [];
   List<Popular> _popularLocation = [];
   List<Recommended> _recommendedLocation = [];
